@@ -14,15 +14,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Upload files to Plesk via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
+          port: 21
           server-dir: ${{ secrets.FTP_DIR }}
-          protocol: ftps
-          security: loose
+          security: "loose"
           exclude: |
             **/.git*
             **/.github/**
