@@ -3,7 +3,7 @@ name: Deploy to Plesk via FTP
 on:
   push:
     branches:
-      - main
+      - main   # αν δουλεύεις σε άλλο branch, άλλαξέ το εδώ
 
 jobs:
   ftp-deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload files to Plesk via FTPS
+      - name: Upload files to Plesk via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
